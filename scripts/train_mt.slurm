@@ -32,5 +32,5 @@ eval "$(/gpfslocalsup/pub/anaconda-py3/2020.02/bin/conda shell.bash hook)"
 conda activate py38
 
 TRANSFORMERS_OFFLINE=1 HF_DATASETS_OFFLINE=1 \
-		    python -u scripts/finetune_t5_mt.py data/metrics/wmt14-18-intoEnglish-all.hyp-ref.masked-examples.jsonl \
+		    python -u scripts/finetune_t5_mt.py --epochs 5 data/metrics/wmt14-18-intoEnglish-all.hyp-ref.masked-examples.jsonl \
 		    --output_dir models/train_t5_metrics/ 2>> models/train_t5_metrics/train.log

@@ -4,6 +4,10 @@ thisdir=`realpath $(dirname $0)`
 maindir=$thisdir/..
 echo "Main project directory = $maindir"
 
+[ -d $maindir/data ] || mkdir $maindir/data
+[ -d $maindir/data/paraphrase ] || mkdir $maindir/data/paraphrase
+[ -d $maindir/data/metrics ] || mkdir $maindir/data/metrics
+
 # Parabank v1
 if [ ! -f $maindir/data/paraphrase/parabank1.tsv ]; then
     # download full parabank
